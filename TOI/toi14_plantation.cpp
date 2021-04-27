@@ -1,60 +1,48 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-double dist(pair<double,double> p1,pair<double,double> p2)
+double dist(double x1,double y1,double x2, double y2)
 {
-	int x1=p1.first;
-	int y1=p1.second;
-	int x2=p2.second;
-	int y2=p2.first;
-	return (double)sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    return (double)sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
 }
 
-//bool cmp(const pair<double,double> a,const pair<double,double> b)
-//{
-//	return a.first<b.first;
-//}
+bool cmp(const pair<double,double> a, const pair<double,double> b)
+{
+    return a.first<b.first;
+}
 
 int main(){
-	
-	int w;
-	scanf("%d",&w);
-	
-	while(w--)
-	{
-		int n;
-		double r,d;
-		scanf("%d%lf%lf",&n,&r,&d);
-		
-		set<pair<double,double> > ss;
-		pair<double,double> p[100010];
-		for(int i=0;i<n;i++)
-		{
-			scanf("%lf %lf",&p[i].first,&p[i].second);
-		}
-		
-		sort(p,p+n);
-		
-		int l=0;
-		double mn=1e18;
-		
-		for(int i=0;i<n;i++)
-		{
-			while(l<i && p[i].first-p[l].first>=mn)
-			{
-				ss.erase({p[l].second,p[l].first});
-				l++;
-			}
-			
-			for(auto it=ss.lower_bound({p[i].second-mn,p[i].first-mn});it!=ss.end() && (*it).first-p[i].second<=mn;it++)
-			{
-				mn=min(mn,dist(p[i],*it));
-			}
-			
-			ss.insert({p[i].second,p[i].first});
-		}
-		
-		if(mn-2*r>=d) printf("Y\n");
-		else printf("N\n");
-	}
+
+    int w;
+    scanf("%d",&w);
+    while(w--)
+    {
+        pair<double,double> t[100005];
+        int n,r,d;
+        scanf("%d%d%d",&n,&r,&d);
+        for(int i=0;i<n;i++) scanf("%lf%lf",&t[i].first,&t[i].second);
+
+        sort(t,t+n,cmp);
+
+        set<pair<double,double> > ss;
+        double mn=INT_MAX;
+        for(int i=0,j=0;i<n;i++)
+        {
+            while(j<i && t[i].first-t[j].first>=mn)
+            {
+                ss.erase({t[j].second,t[j].first});
+                j++;
+            }
+
+            for(auto it=ss.lower_bound({t[i].second-mn,t[i].first-mn});it!=ss.end();it++)
+            {
+                if((*it).first-t[i].second > mn) break;
+                mn=min(mn,dist((*it).second,(*it).first,t[i].first,t[i].second));
+            }
+
+            ss.insert({t[i].second,t[i].first});
+        }
+        if(mn-2*r>=d) printf("Y\n");
+        else printf("N\n");
+    }
 }
