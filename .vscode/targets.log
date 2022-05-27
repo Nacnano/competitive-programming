@@ -7,8 +7,9 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu May 26 14:15:51 2022
+# Make data base, printed on Fri May 27 17:13:35 2022
 
 # Variables
 
@@ -25,7 +26,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2aafb02e-8926-4a39-9245-0fc70f3fa492.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-10331ee7-d974-4ce1-bd96-f63fab34f7e1.sock
 # environment
 LC_NAME = th_TH.UTF-8
 # environment
@@ -64,8 +65,9 @@ VSCODE_LOG_STACK = false
 VSCODE_CODE_CACHE_PATH = /home/nacnano/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LANG = C
+ 
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.AORCM1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.U3OXM1
 # default
 .LOADED := 
 # default
@@ -105,7 +107,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 25484
+VSCODE_PID = 3402
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -113,7 +115,7 @@ XDG_SESSION_TYPE = wayland
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/nac:@/tmp/.ICE-unix/1318,unix/nac:/tmp/.ICE-unix/1318
+SESSION_MANAGER = local/nac:@/tmp/.ICE-unix/1171,unix/nac:/tmp/.ICE-unix/1171
 # automatic
 *F = $(notdir $*)
 # environment
@@ -161,11 +163,12 @@ LC_TIME = th_TH.UTF-8
 # environment
 SNAP = /snap/code/97
 # environment
-INVOCATION_ID = 883736d205424dbd8044cbd0333dee65
+INVOCATION_ID = 0b2afd6fb99d44308ed007f769e38e70
 # environment
 SNAP_REVISION = 97
 # environment
 SNAP_REAL_HOME = /home/nacnano
+ 
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -199,7 +202,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1350
+SYSTEMD_EXEC_PID = 1193
 # environment
 DISPLAY = :0
 # environment
@@ -215,11 +218,11 @@ SNAP_DATA = /var/snap/code/97
 # environment
 SNAP_CONTEXT = Sbajl2nftobpecubVprVjD2L057CXqhTYk61FG6wc5jwJvUC2xzb
 # environment
-MANAGERPID = 1155
+MANAGERPID = 1061
 # environment
 LC_MEASUREMENT = th_TH.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 25438
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3356
 # environment
 _ = /snap/code/97/usr/share/code/code
 # environment
@@ -229,7 +232,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/nacnano/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:27443
+JOURNAL_STREAM = 8:30040
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -273,6 +276,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = th_TH.UTF-8
 # environment
+ 
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
 # Load=131/1024=13%, Rehash=0, Collisions=5/158=3%
@@ -340,8 +344,7 @@ GNUmakefile:
 
 # strcache performance: lookups = 33 / hit rate = 9%
 # hash-table stats:
- 
 # Load=30/8192=0%, Rehash=0, Collisions=0/33=0%
-# Finished Make data base on Thu May 26 14:15:51 2022
+# Finished Make data base on Fri May 27 17:13:35 2022
 
  
