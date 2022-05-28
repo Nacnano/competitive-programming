@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nacnano/Documents/github/Competitive-Programming'
+make: Leaving directory '/home/nacnano/Documents/github/Competitive-Programming'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
