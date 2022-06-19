@@ -13,20 +13,12 @@ void calc(long long lv, long long w){
 		ans += w;
 		return;
 	} 
-	if (c[lv-1] % 2){
-		calc(lv-1, w-c[lv-1]/2);
-		calc(lv-1, w-c[lv-1]/2-1);
-	}
-	else{
-		calc(lv-1, w-c[lv-1]/2);	
-		calc(lv-1, w-c[lv-1]/2);
-	}
-	
+	calc(lv-1, w-c[lv-1]/2);
+	calc(lv-1, w-c[lv-1]/2);
 }
 	
 
 void solve(){
-	
 	cin >> n >> w;
 	for(int i=1;i<=n;i++){
 		cin >> c[i];
@@ -53,3 +45,15 @@ int main(){
 	return 0;
 }
 
+/*
+
+3 1
+1 1
+
+3 10
+9 9
+
+20 1000000000
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+
+*/
