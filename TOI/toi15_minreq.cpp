@@ -42,7 +42,6 @@ int main(){
 				{
 					
 					long long mid=(left+right)/2;
-		//			printf("%lld %lld %lld\n",left,mid,right);
 					if(sum[mid]-sum[st-1]+a[j]>l[j])
 					{
 						right=mid-1;
@@ -54,8 +53,6 @@ int main(){
 					}
 
 				}
-				
-		//		printf("cnt %d %lld\n",j,cnt);
 				if(last!=st-1)
 				{	
 					cnt++;
@@ -70,7 +67,6 @@ int main(){
 			mx=max(mx,cnt);
 			if(cnt==1e9) break;
 		}
-	//	printf("%lld %lld\n",mx,t[i]);
 		if(mx<=t[i]) printf("P\n");
 		else printf("F\n");
 	}
