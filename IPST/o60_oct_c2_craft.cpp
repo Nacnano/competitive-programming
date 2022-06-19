@@ -15,6 +15,8 @@ void calc(long long lv, long long w){
 	} 
 	calc(lv-1, w-c[lv-1]/2);
 	calc(lv-1, w-c[lv-1]/2);
+
+	return
 }
 	
 void solve(){
@@ -28,7 +30,6 @@ void solve(){
 }
 
 int main(){
-	// tesing sublime text
 	#ifndef ONLINE_JUDGE
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
@@ -43,16 +44,3 @@ int main(){
 	}
 	return 0;
 }
-
-/*
-
-3 1
-1 1
-
-3 10
-9 9
-
-20 1000000000
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-
-*/
