@@ -17,7 +17,6 @@ void calc(long long lv, long long w){
 	calc(lv-1, w-c[lv-1]/2);
 }
 	
-
 void solve(){
 	cin >> n >> w;
 	for(int i=1;i<=n;i++){
