@@ -25,10 +25,8 @@ void solve(){
 	}
 	node[0]= {1,n};
 	l[0]=1, r[0]=n;
-	}
 
-	while(q--)
-	{
+	while(q--){
 		long long x;
 		cin >> x;
 		while(x>n){
