@@ -15,6 +15,7 @@ void calc(long long lv, long long w){
 			return;
 		}
 	} 
+	
 	w = w*2 - c[--lv] + 1;
 	if(w%2){
 		calc(lv, w/2);
