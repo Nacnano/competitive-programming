@@ -1,7 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int mxn = 100000;
+const int mxn = 205;
+
 void solve(){
+	int n, x;
+	int a[mxn];
+	cin >> n >> x;
+	for(int i=0;i<2*n;i++)
+	{
+		cin >> a[i];
+	}
+	sort(a,a+2*n);
+	for(int i=0;i<n;i++)
+	{
+		if(a[i+n]-a[i]<x){
+			cout << "NO\n";
+			return;
+		}
+	}
+	cout << "YES\n";
+	return;
 }
 
 int main(){
@@ -10,10 +28,10 @@ int main(){
 	freopen("output.txt","w",stdout);
 	#endif
 
-	ios_base::sync_with_stdio(0), cin.tie(NULL);
+	ios_base::sync_with_stdio(0), cin.tie(NULL), cout.tie(NULL);
 
-	int t=1;
-	// cin >> t;
+	int t;
+	cin >> t;
 	while(t--){
 		solve();
 	}
