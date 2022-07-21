@@ -26,6 +26,7 @@
 *.exe
 *.out
 *.app
+*.bin
 
 # =========================
 # Operating System Files
