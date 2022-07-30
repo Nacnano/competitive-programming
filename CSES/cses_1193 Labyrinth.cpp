@@ -8,17 +8,25 @@ int di[5][2] = {{1,0}, {-1,0}, {0,-1}, {0,1}};
 char mm[5] = {'D', 'U', 'L', 'R'};
 string s [maxN];
 
-void dfs(int x, int y){
-	for(int i=0;i<4;i++){
-		int nx=x+di[i][1], ny=y+di[i][0];
-		if(nx<0 || ny<0 || nx>=m || ny>=n) continue;
-		if(s[ny][nx]=='#') continue;
-		if(dis[ny][nx]>dis[y][x]+1){
-			dis[ny][nx]=dis[y][x]+1;
-			back[ny][nx]=mm[i];
-			dfs(nx,ny);
+void bfs(int x, int y){
+	dis[y][x]=0;
+	queue<pair<int,int> > q;
+	q.push({x,y});
+	while(!q.empty()){
+		int x=q.front().first, y=q.front().second;
+		q.pop();
+		for(int i=0;i<4;i++){
+			int nx=x+di[i][1], ny=y+di[i][0];
+			if(nx<0 || ny<0 || nx>=m || ny>=n) continue;
+			if(s[ny][nx]=='#') continue;
+			if(dis[ny][nx]>dis[y][x]+1){
+				dis[ny][nx]=dis[y][x]+1;
+				back[ny][nx]=mm[i];
+				q.push({nx,ny});
+			}
 		}
-	}
+	}	
+
 }
 
 int main(){
@@ -39,9 +47,7 @@ int main(){
 		}
 	}
 
-	dis[st.first][st.second]=0;
-	back[st.first][st.second]='X';
-	dfs(st.second, st.first);
+	bfs(st.second, st.first);
 
 	if(dis[ed.first][ed.second]==1e9) cout << "NO";
 	else{
