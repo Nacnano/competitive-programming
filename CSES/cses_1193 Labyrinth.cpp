@@ -5,7 +5,7 @@ char back[maxN][maxM];
 int dis[maxN][maxM], n, m;
 pair<int,int> st, ed;
 int di[5][2] = {{1,0}, {-1,0}, {0,-1}, {0,1}};
-char mm[5] = {'U', 'D', 'L', 'R'};
+char mm[5] = {'D', 'U', 'L', 'R'};
 string s [maxN];
 
 void dfs(int x, int y){
@@ -14,8 +14,7 @@ void dfs(int x, int y){
 		if(nx<0 || ny<0 || nx>=m || ny>=n) continue;
 		if(s[ny][nx]=='#') continue;
 		if(dis[ny][nx]>dis[y][x]+1){
-			// dis[ny][nx]=dis[y][x]+1;
-			cout << x << " " << y << " " << nx << " " << ny << "\n";
+			dis[ny][nx]=dis[y][x]+1;
 			back[ny][nx]=mm[i];
 			dfs(nx,ny);
 		}
@@ -39,23 +38,10 @@ int main(){
 			dis[i][j]=1e9;
 		}
 	}
-	dis[st.first][st.second]=0;
-	dfs(st.second, st.first);
 
-	for(int i=0;i<n;i++){
-		for(int j=0;j<m;j++){
-			cout << dis[i][j] << " ";
-		}
-		cout << "\n";
-	}
-	// back[0][0]='C';
-	// back[0][1]='D';
-	for(int i=0;i<n;i++){
-		for(int j=0;j<m;j++){
-			// cout << back[i][j] << " ";
-		}
-		cout << "\n";
-	}
+	dis[st.first][st.second]=0;
+	back[st.first][st.second]='X';
+	dfs(st.second, st.first);
 
 	if(dis[ed.first][ed.second]==1e9) cout << "NO";
 	else{
@@ -66,8 +52,8 @@ int main(){
 			char now_back=back[now.first][now.second];
 			ans.push_back(now_back);
 			int nx=now.second, ny=now.first;
-			if(now_back=='L') nx--;
-			else if(now_back=='R') nx++;
+			if(now_back=='L') nx++;
+			else if(now_back=='R') nx--;
 			else if(now_back=='U') ny++;
 			else if(now_back=='D') ny--;
 			now={ny,nx};
