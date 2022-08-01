@@ -6,23 +6,33 @@ using namespace std;
 #define s second
 
 const int maxN=100005;
-int n, m;
-string a, b;
 
 void solve(){
+	int n, m, a[maxN], ans=0;
+	priority_queue<int> pqmid, pqedge;
+	cin >> n >> m >> a[0];
 
-	cin >> n >> m;
-	cin >> a >> b;
-	int pos=m-1;
-	for(int i=n-1;i>=0;i--){
-		if(b[pos]==a[i]){
-			pos--;
-		}
-		else if(a[i]=='1') break;
+	for(int i=1;i<n;i++){
+		cin >> a[i];
 	}
-	cout << pos << " ";
-	if(pos==-1) cout << "YES\n";
-	else cout << "NO\n";
+	sort(a,a+n);
+	pqedge.push(a[0]-1);
+	pqedge.push(n-a[n-1]);
+
+	for(int i=1;i<n;i++){
+		pqmid.push(a[i]-a[i-1]-1);
+	}
+
+	int t=1;
+	while(!pq.empty()){
+		int now = pq.top();
+		pq.pop();
+		if(now-2*t>0){
+			ans+=now-1;
+		}
+		t+=2;
+	}
+	cout << ans << "\n";
 }
 
 int main(){
