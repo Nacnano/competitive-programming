@@ -11,7 +11,6 @@ int _find(long long pos){
 	return int(c-1);
 }
 
-
 void solve(){
 	cin >> n >> c >> q;
 	string s;
