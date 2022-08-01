@@ -51,7 +51,6 @@ void solve(){
 		}
 		else if((x1-x2)%k==0){
 			int mx=query(1, 1, m, min(x1, x2), max(x1, x2));
-			// cout << mx <<"\n";
 			if(y1>mx){
 				 cout << "YES\n";
 			}
@@ -68,10 +67,7 @@ void solve(){
 			}
 		}
 		else cout << "NO\n";
-
-
 	}
-
 }
 
 int main(){
