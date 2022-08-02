@@ -9,24 +9,21 @@ const int maxN=100005;
 
 void solve(){
 	int n, m, a[maxN], ans=0;
-	priority_queue<int> pqmid, pqedge;
+	priority_queue<pii> pqmid, pqedge;
 	cin >> n >> m >> a[0];
 
 	for(int i=1;i<n;i++){
 		cin >> a[i];
 	}
 	sort(a,a+n);
-	pqedge.push(a[0]-1);
-	pqedge.push(n-a[n-1]);
-
-	for(int i=1;i<n;i++){
-		pqmid.push(a[i]-a[i-1]-1);
-	}
+	pqedge.push({a[0]-1, 1});
+	pqedge.push({n-a[n-1], 1});
 
 	int t=1;
 	while(!pq.empty()){
 		int now = pq.top();
 		pq.pop();
+
 		if(now-2*t>0){
 			ans+=now-1;
 		}

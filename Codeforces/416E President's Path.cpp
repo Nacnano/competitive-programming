@@ -57,6 +57,5 @@ int main(){
             }
             printf("%d ",sum);
         }
-//        printf("\n");
     }
 }
