@@ -8,49 +8,36 @@ using namespace std;
 const int maxN=100005;
 
 void solve(){
-	int n, m, a[maxN], ans=0;
-	priority_queue<int> pqmid, pqedge;
+	int n, m, a[maxN], ans;
+	priority_queue<int> pq;
 	cin >> n >> m;
 
 	for(int i=0;i<m;i++){
 		cin >> a[i];
 	}
 	sort(a,a+m);
+
+	pq.push(n+a[0]-a[m-1]-1);
 	for(int i=1;i<m;i++){
-		pqmid.push(a[i]-a[i-1]);
+		pq.push(a[i]-a[i-1]-1);
 	}
-	pqedge.push(a[0]-1);
-	pqedge.push(n-a[m-1]);
 
 	int t=0;
-	while(!pqmid.empty()){
-		int now = pqmid.top();
-		cout << now << " ";
-		pqmid.pop();
-		if(!pqedge.empty()){
-			while(!pqedge.empty()){
-				if(pqedge.top()>=t){
-				pqedge.pop();
-				}
-				else break;
-			}
-		}
-		if(!pqedge.empty()){
-			if(pqedge.top()>=now){
-				pqmid.push(now);
-				now=pqedge.top();
-				ans+=max(now-t, 0);
-				pqedge.pop();
-				t++;
-				continue;
-			}
-		}
-
-		if(now-2*t>0){
-			ans+=max(now-2*t-1, 0);
+	ans=m;
+	while(!pq.empty()){
+		int now = pq.top();
+		pq.pop();
+		if(now==2*t+1){
+			ans+=2*t;
 			t++;
 		}
-		t++;
+		else if(now>2*t+1){
+			ans+=1+2*t;
+			t+=2;
+		}
+		else{
+			ans+=now;
+		}
 	}
 	cout << ans << "\n";
 }
@@ -63,9 +50,9 @@ int main(){
 
 	ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
 
-	int q=1;
-	cin >> q;
-	while(q--){
+	int t=1;
+	cin >> t;
+	while(t--){
 		solve();
 	}
 	return 0;
