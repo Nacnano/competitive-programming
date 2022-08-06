@@ -7,7 +7,7 @@ using namespace std;
 
 const int maxN=100005;
 
-void notuse(int st, int last){
+void gen(int st, int last){
 	for(int i=st;i<=last;i++){
 		cout << i-1 << " " << i << "\n";
 	}
