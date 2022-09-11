@@ -80,7 +80,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # In/Out file
-input.txt
-output.txt
-in.txt
-out.txt
+*.txt
