@@ -40,52 +40,52 @@ void solve(){
 
 
 
-	// int left=1, right=1;
-	// sum=0;
-	// while(vp[right]<2*l){
-	// 	sum=vqs[right];
-	// 	ans=max(ans, sum);
-	// 	right++;
-	// 	// cout << sum << " " << p[left] << " " << p[right] << "\n";
-	// }
-	// while(right<(int)vp.size()){
-	// 	if(vp[left]<=0){
-	// 		left++;
-	// 		if(vp[right]-vp[left]>=2*l && vp[right]-p[left]<=2*u){
-	// 		sum=vqs[right]-vqs[left-1];
-	// 		ans=max(ans, sum);
-	// 		continue;
-	// 	}
-	// 	}
-	// 	if(vp[right]-vp[left]>=2*l && vp[right]-vp[left]<=2*u){
-	// 		sum=vqs[right]-vqs[left-1];
-	// 		ans=max(ans, sum);
-	// 	}
-	// 	if(vp[right]-vp[left]>2*u){
-	// 		left++;
-	// 		continue;
-	// 	}
-	// 	if(vp[right]-vp[left]<2*l){
-	// 		right++;
-	// 		continue;
-	// 	}
-	// 	if(vp[right]-vp[left]>=2*l && vp[right]-vp[left]<=2*u){
-	// 		sum=vqs[right]-vqs[left-1];
-	// 		ans=max(ans, sum);
-	// 	}
-	// 	// cout << sum << " " << vp[left] << " " << vp[right] << "\n";
-	// 	if(v[right+1]-v[left]<=2*u && v[right])
+	int left=1, right=1;
+	sum=0;
+	while(vp[right]<2*l){
+		sum=vqs[right];
+		ans=max(ans, sum);
+		right++;
+		// cout << sum << " " << p[left] << " " << p[right] << "\n";
+	}
+	while(right<(int)vp.size()){
+		if(vp[left]<=0){
+			left++;
+			if(vp[right]-vp[left]>=2*l && vp[right]-p[left]<=2*u){
+			sum=vqs[right]-vqs[left-1];
+			ans=max(ans, sum);
+			continue;
+		}
+		}
+		if(vp[right]-vp[left]>=2*l && vp[right]-vp[left]<=2*u){
+			sum=vqs[right]-vqs[left-1];
+			ans=max(ans, sum);
+		}
+		if(vp[right]-vp[left]>2*u){
+			left++;
+			continue;
+		}
+		if(vp[right]-vp[left]<2*l){
+			right++;
+			continue;
+		}
+		if(vp[right]-vp[left]>=2*l && vp[right]-vp[left]<=2*u){
+			sum=vqs[right]-vqs[left-1];
+			ans=max(ans, sum);
+		}
+		// cout << sum << " " << vp[left] << " " << vp[right] << "\n";
+		if(v[right+1]-v[left]<=2*u && v[right])
 
-	// 	left++;
+		left++;
 
-	// }
-	// right--;
-	// while(vp[right]-vp[left]>=2*l && vp[right]-vp[left]<=2*u){
-	// 	sum=vqs[right]-vqs[left-1];
-	// 	ans=max(ans, sum);
-	// 	left++;
-	// 	// cout << sum << " " << vp[left] << " " << vp[right] << "\n";
-	// }
+	}
+	right--;
+	while(vp[right]-vp[left]>=2*l && vp[right]-vp[left]<=2*u){
+		sum=vqs[right]-vqs[left-1];
+		ans=max(ans, sum);
+		left++;
+		// cout << sum << " " << vp[left] << " " << vp[right] << "\n";
+	}
 	cout << ans;
 }
 
