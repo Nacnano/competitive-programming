@@ -27,7 +27,6 @@ void solve(){
 				sum+=q[n-1-now];
 			}
 		}
-		// cout << md << " " << sum << endl; 
 		if(sum < c){
 			r=md-1;
 		}
