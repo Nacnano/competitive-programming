@@ -9,9 +9,9 @@ const ll p=1e9+7;
 const int maxN=110005;
 
 void solve(){
-	int n;
-	cin >> n ;
-	cout << n << endl;
+	int a, b, c;
+	cin >>  a >> b >> c;
+	cout << a+b+c-min(a, min(b, c))-max(a, max(b, c)) << endl;
 }
 
 int main(){
@@ -29,3 +29,4 @@ int main(){
 	}
 	return 0;
 }
+
