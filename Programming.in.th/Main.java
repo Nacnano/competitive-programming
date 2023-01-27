@@ -1,13 +1,13 @@
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Java0000 implements Runnable{
+public class Main implements Runnable{
     private Scanner in = new Scanner(System.in);
     private PrintWriter out = new PrintWriter(System.out); 
     private int a, b, sum;
 
     public static void main(String[] args){
-        new Thread(new Java0000()).start();
+        new Thread(new Main()).start();
     }
 
     private void read(){

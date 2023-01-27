@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "competitive-programming_8b88fbb"
+    },
+    {
+      "type": "java",
       "name": "Launch Java0000",
       "request": "launch",
       "mainClass": "Java0000",
