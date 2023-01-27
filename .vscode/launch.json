@@ -5,6 +5,13 @@
       "type": "java",
       "name": "Launch Main",
       "request": "launch",
+      "mainClass": "Java0000.Main",
+      "projectName": "competitive-programming_8b88fbb"
+    },
+    {
+      "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
       "mainClass": "Main",
       "projectName": "competitive-programming_8b88fbb"
     },
