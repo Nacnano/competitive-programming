@@ -1,4 +1,11 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled",
-    "DockerRun.DisableAutoGenerateConfig": true
+  "C_Cpp.errorSquiggles": "Disabled",
+  "DockerRun.DisableAutoGenerateConfig": true,
+  "java.project.sourcePaths": [
+    "Programming.in.th/Java0002",
+    "Programming.in.th/Java0001 copy",
+    "Programming.in.th/Java0001",
+    "Programming.in.th/Java0000",
+    "Programming.in.th/Java1125"
+  ]
 }
